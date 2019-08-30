@@ -1,0 +1,47 @@
+{
+    "bindings": [
+        {
+            "authLevel": "function",
+            "type": "httpTrigger",
+            "direction": "in",
+            "name": "req",
+            "methods": [
+                "post"
+            ]
+        },
+        {
+            "name": "triggerViewGClassroomProcess",
+            "type": "queue",
+            "direction": "out",
+            "queueName": "view-gclassroom-process",
+            "connection": "wrdsbskinner_STORAGE"
+        },
+        {
+            "name": "triggerViewIAMWPProcess",
+            "type": "queue",
+            "direction": "out",
+            "queueName": "view-iamwp-process",
+            "connection": "wrdsbflenderson_STORAGE"
+        },
+        {
+            "name": "triggerViewSkinnerStaffProcess",
+            "type": "queue",
+            "direction": "out",
+            "queueName": "view-skinnerstaff-process",
+            "connection": "wrdsbskinner_STORAGE"
+        },
+        {
+            "name": "triggerViewStaffDirProcess",
+            "type": "queue",
+            "direction": "out",
+            "queueName": "view-staffdir-process",
+            "connection": "wrdsbflenderson_STORAGE"
+        },
+        {
+            "type": "http",
+            "direction": "out",
+            "name": "res"
+        }
+    ],
+    "scriptFile": "../dist/EventEmitter/index.js"
+}
