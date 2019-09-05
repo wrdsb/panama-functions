@@ -9,7 +9,7 @@ const eventEmitter: AzureFunction = async function (context: Context, req: HttpR
     switch (event) {
         case 'Panama.View.GClassroom.Copy':
             queueTriggered = 'view-gclassroom-process';
-            queueMessage = 'Skinner.View.GClassroom.Process';
+            queueMessage = JSON.stringify({"job_type": "Skinner.View.GClassroom.Process"});
             context.bindings.triggerViewGClassroomProcess = queueMessage;
             break;
         case 'Panama.View.IAMWP.Copy':
@@ -17,9 +17,14 @@ const eventEmitter: AzureFunction = async function (context: Context, req: HttpR
             queueMessage = 'Flenderson.View.IAMWP.Process';
             context.bindings.triggerViewIAMWPProcess = queueMessage;
             break;
+        case 'Panama.View.SkinnerAssignments.Copy':
+            queueTriggered = 'view-skinnerassignments-process';
+            queueMessage = JSON.stringify({"job_type": "Skinner.View.SkinnerAssignments.Process"});
+            context.bindings.triggerViewSkinnerAssignmentsProcess = queueMessage;
+            break;
         case 'Panama.View.SkinnerStaff.Copy':
             queueTriggered = 'view-skinnerstaff-process';
-            queueMessage = 'Skinner.View.SkinnerStaff.Process';
+            queueMessage = JSON.stringify({"job_type": "Skinner.View.SkinnerStaff.Process"});
             context.bindings.triggerViewSkinnerStaffProcess = queueMessage;
             break;
         case 'Panama.View.StaffDir.Copy':

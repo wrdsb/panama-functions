@@ -24,6 +24,13 @@
             "connection": "wrdsbflenderson_STORAGE"
         },
         {
+            "name": "triggerViewSkinnerAssignmentsProcess",
+            "type": "queue",
+            "direction": "out",
+            "queueName": "view-skinnerassignments-process",
+            "connection": "wrdsbskinner_STORAGE"
+        },
+        {
             "name": "triggerViewSkinnerStaffProcess",
             "type": "queue",
             "direction": "out",
