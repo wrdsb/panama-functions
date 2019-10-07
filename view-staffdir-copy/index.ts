@@ -28,7 +28,7 @@ const viewStaffDirCopy: AzureFunction = async function (context: Context, trigge
 
     const incomingBlob = context.bindings.incomingBlob;
 
-    if (incomingBlob.lenth < 500) {
+    if (incomingBlob.length < 500) {
         statusCode = "404"
         statusMessage = "Error: Too few sourece records. Aborting.";
     } else {
