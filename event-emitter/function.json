@@ -1,13 +1,11 @@
 {
     "bindings": [
         {
-            "authLevel": "function",
-            "type": "httpTrigger",
-            "direction": "in",
-            "name": "req",
-            "methods": [
-                "post"
-            ]
+            "name": "triggerMessage",
+            "type": "queueTrigger",
+            "queueName": "event-emitter",
+            "connection": "wrdsbpanama_STORAGE",
+            "direction": "in"
         },
         {
             "name": "triggerViewGClassroomProcess",
@@ -45,10 +43,12 @@
             "connection": "wrdsbflenderson_STORAGE"
         },
         {
-            "type": "http",
-            "direction": "out",
-            "name": "res"
+            "name": "callbackMessage",
+            "type": "queue",
+            "queueName": "callbacks",
+            "connection": "wrdsbpanama_STORAGE",
+            "direction": "out"
         }
     ],
-    "scriptFile": "../dist/EventEmitter/index.js"
+    "scriptFile": "../dist/event-emitter/index.js"
 }
