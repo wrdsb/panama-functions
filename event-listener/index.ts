@@ -32,27 +32,27 @@ const eventListener: AzureFunction = async function (context: Context, req: Http
         case 'Panama.View.GClassroom.Extract':
             queueTriggered = 'view-gclassroom-copy';
             queueMessage = JSON.stringify({"job_type": "Panama.View.GClassroom.Copy"});
-            context.bindings.triggerViewGClassroomProcess = queueMessage;
+            context.bindings.triggerViewGClassroomCopy = queueMessage;
             break;
         case 'Panama.View.IAMWP.Extract':
             queueTriggered = 'view-iamwp-copy';
             queueMessage = JSON.stringify({"job_type": "Panama.View.IAMWP.Copy"});
-            context.bindings.triggerViewIAMWPProcess = queueMessage;
+            context.bindings.triggerViewIAMWPCopy = queueMessage;
             break;
         case 'Panama.View.SkinnerAssignments.Extract':
             queueTriggered = 'view-skinnerassignments-copy';
             queueMessage = JSON.stringify({"job_type": "Panama.View.SkinnerAssignments.Copy"});
-            context.bindings.triggerViewSkinnerAssignmentsProcess = queueMessage;
+            context.bindings.triggerViewSkinnerAssignmentsCopy = queueMessage;
             break;
         case 'Panama.View.SkinnerStaff.Extract':
             queueTriggered = 'view-skinnerstaff-copy';
             queueMessage = JSON.stringify({"job_type": "Panama.View.SkinnerStaff.Copy"});
-            context.bindings.triggerViewSkinnerStaffProcess = queueMessage;
+            context.bindings.triggerViewSkinnerStaffCopy = queueMessage;
             break;
         case 'Panama.View.StaffDir.Extract':
             queueTriggered = 'view-staffdir-copy';
             queueMessage = JSON.stringify({"job_type": "Panama.View.StaffDir.Copy"});
-            context.bindings.triggerViewStaffDirProcess = queueMessage;
+            context.bindings.triggerViewStaffDirCopy = queueMessage;
             break;
         default:
             break;
@@ -82,7 +82,7 @@ const eventListener: AzureFunction = async function (context: Context, req: Http
 
     context.res = {
         status: 200,
-        body: logBlob
+        body: logPayload
     };
     context.done(null, logBlob);
 };
