@@ -36,7 +36,7 @@ const viewStaffDirCopy: AzureFunction = async function (context: Context, trigge
         statusMessage = "Success: Copied ipps-view-staffdir/incoming.json to ipps-view-staffdir/now.json.";
 
         // Copy blob contents
-        context.bindings.nowBlob = incomingBlob;
+        context.bindings.outgoingBlob = incomingBlob;
     }
 
     logPayload = {

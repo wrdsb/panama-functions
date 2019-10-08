@@ -36,7 +36,7 @@ const viewIAMWPCopy: AzureFunction = async function (context: Context, triggerMe
         statusMessage = "Success: Copied ipps-view-iamwp/incoming.json to ipps-view-iamwp/now.json.";
 
         // Copy blob contents
-        context.bindings.nowBlob = incomingBlob;
+        context.bindings.outgoingBlob = incomingBlob;
     }
 
     logPayload = {

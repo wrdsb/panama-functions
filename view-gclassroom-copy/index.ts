@@ -36,7 +36,7 @@ const viewGClassroomCopy: AzureFunction = async function (context: Context, trig
         statusMessage = "Success: Copied trillium-view-gclassroom/incoming.json to trillium-view-gclassroom/now.json.";
 
         // Copy blob contents
-        context.bindings.nowBlob = incomingBlob;
+        context.bindings.outgoingBlob = incomingBlob;
     }
 
     logPayload = {

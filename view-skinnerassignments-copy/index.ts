@@ -36,7 +36,7 @@ const viewSkinnerAssignmentsCopy: AzureFunction = async function (context: Conte
         statusMessage = "Success: Copied trillium-view-skinnerassignments/incoming.json to trillium-view-skinnerassignments/now.json.";
 
         // Copy blob contents
-        context.bindings.nowBlob = incomingBlob;
+        context.bindings.outgoingBlob = incomingBlob;
     }
 
     logPayload = {
