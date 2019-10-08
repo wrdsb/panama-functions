@@ -57,6 +57,11 @@
             "queueName": "event-emitter",
             "connection": "wrdsbpanama_STORAGE",
             "direction": "out"
+        },
+        {
+            "name": "res",
+            "type": "http",
+            "direction": "out"
         }
     ],
     "scriptFile": "../dist/event-listener/index.js"
