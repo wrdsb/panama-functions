@@ -58,9 +58,12 @@ const eventListener: AzureFunction = async function (context: Context, req: Http
             break;
     }
 
+    const statusCode = '200';
+    const statusMessage = `Sent ${queueMessage} to ${queueTriggered}`;
+
     const logPayload = {
-        status: "200",
-        message: `Sent ${queueMessage} to ${queueTriggered}`,
+        status: statusCode,
+        message: statusMessage,
         queueMessage: queueMessage,
         queueTriggered: queueTriggered
     };
@@ -76,7 +79,7 @@ const eventListener: AzureFunction = async function (context: Context, req: Http
     context.log(callbackMessage);
     
     // Fire event for external consumption
-    const invocationEvent = await createEvent(functionInvocationID, functionInvocationTime, functionInvocationTimestamp, functionName, functionEventType, functionEventID, functionLogID, logStorageAccount, logStorageContainer, eventLabel, eventTags);
+    const invocationEvent = await createEvent(functionInvocationID, functionInvocationTime, functionInvocationTimestamp, functionName, functionEventType, functionEventID, functionLogID, statusCode, statusMessage, logStorageAccount, logStorageContainer, eventLabel, eventTags);
     context.bindings.flynnEvent = JSON.stringify(invocationEvent);
     context.log(invocationEvent);
 
