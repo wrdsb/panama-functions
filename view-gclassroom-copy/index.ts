@@ -57,7 +57,7 @@ const viewGClassroomCopy: AzureFunction = async function (context: Context, trig
     context.log(callbackMessage);
     
     // Fire event for external consumption
-    const invocationEvent = await createEvent(functionInvocationID, functionInvocationTime, functionInvocationTimestamp, functionName, functionEventType, functionEventID, functionLogID, logStorageAccount, logStorageContainer, eventLabel, eventTags);
+    const invocationEvent = await createEvent(functionInvocationID, functionInvocationTime, functionInvocationTimestamp, functionName, functionEventType, functionEventID, functionLogID, statusCode, statusMessage, logStorageAccount, logStorageContainer, eventLabel, eventTags);
     context.bindings.flynnEvent = JSON.stringify(invocationEvent);
     context.log(invocationEvent);
 
