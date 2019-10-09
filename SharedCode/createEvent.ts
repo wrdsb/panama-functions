@@ -8,6 +8,9 @@ async function createEvent(
     functionEventID,
     functionLogID,
 
+    status,
+    statusMessage,
+
     logStorageAccount,
     logStorageContainer,
 
@@ -44,7 +47,10 @@ async function createEvent(
             functionEventType: functionEventType,
             functionEventID: functionEventID,
             functionLogID: functionLogID,
-        
+
+            status: status,
+            statusMessage: statusMessage,
+
             logStorageAccount: logStorageAccount,
             logStorageContainer: logStorageContainer,
 
