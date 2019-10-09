@@ -61,13 +61,7 @@ const viewIAMWPCopy: AzureFunction = async function (context: Context, triggerMe
     context.bindings.flynnEvent = JSON.stringify(invocationEvent);
     context.log(invocationEvent);
 
-    if (statusCode < 400) {
-        // Context done success message
-        context.done(null, logBlob);
-    } else {
-        // Context done error
-        context.done(logBlob);
-    }
+    context.done(null, logBlob);
 };
 
 export default viewIAMWPCopy;
