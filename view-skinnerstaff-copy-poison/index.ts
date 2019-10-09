@@ -27,7 +27,7 @@ const viewSkinnerStaffCopyPoison: AzureFunction = async function (context: Conte
     const queueMessage = context.bindings.triggerMessage;
 
     const statusCode = '200';
-    const statusMessage = 'Logged poisonous message from queue view-staffdir-copy.';
+    const statusMessage = 'Logged poisonous message from queue view-skinnerstaff-copy.';
 
     const logPayload = {
         application: 'panama-functions',

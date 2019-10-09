@@ -27,7 +27,7 @@ const viewIAMWPCopyPoison: AzureFunction = async function (context: Context, tri
     const queueMessage = context.bindings.triggerMessage;
 
     const statusCode = '200';
-    const statusMessage = 'Logged poisonous message from queue view-staffdir-copy.';
+    const statusMessage = 'Logged poisonous message from queue view-iamwp-copy.';
 
     const logPayload = {
         application: 'panama-functions',

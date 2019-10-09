@@ -27,7 +27,7 @@ const viewGClassroomCopyPoison: AzureFunction = async function (context: Context
     const queueMessage = context.bindings.triggerMessage;
 
     const statusCode = '200';
-    const statusMessage = 'Logged poisonous message from queue view-staffdir-copy.';
+    const statusMessage = 'Logged poisonous message from queue view-gclassroom-copy.';
 
     const logPayload = {
         application: 'panama-functions',
